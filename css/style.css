@@ -16,12 +16,13 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 body {
     background-color: var(--white);
     font-size: 1.6rem;
+    transition: .2s linear;
 }
 
 .wrapper {
@@ -224,6 +225,150 @@ button {
     margin-bottom: 2rem;
 }
 
+/* Advantages */
+.advantages {
+    background-image: url('../img/advantages-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50rem;
+    margin-top: 10rem;
+}
+
+.advantages-title h1 {
+    color: var(--white);
+}
+
+.advantages-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    place-content: center;
+    gap: 2rem;
+    margin-top: 10rem;
+}
+
+.advantage-item {
+    text-align: center;
+}
+
+.advantage-image img {
+    height: 12rem;
+    margin-bottom: 2rem;
+}
+
+.advantage-title h2 {
+    color: var(--white);
+    font-size: 3rem;
+}
+
+/* About */
+.about {
+    background-color: #dfdcdc;
+    margin-top: 10rem;
+    padding: 5rem;
+}
+
+.about-title {
+    margin-bottom: 5rem;
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    place-content: center;
+}
+
+.about-item {
+    text-align: center;
+}
+
+.about-number h1 {
+    color: #008000;
+    font-size: 7rem;
+    font-weight: 900;
+}
+
+.about-number p {
+    font-size: 2rem;
+}
+
+/* Reviews */
+.reviews {
+    margin-top: 10rem;
+}
+
+.reviews-title {
+    margin-bottom: 5rem;
+}
+
+.review-item {
+    text-align: center;
+}
+
+.review-image {
+    margin-bottom: 3rem;
+}
+
+.review-text {
+    max-width: 70rem;
+    margin: 1rem auto;
+}
+
+.review-image img {
+    height: 10rem;
+    border-radius: 10rem;
+}
+
+/* Address */
+.address {
+    margin-top: 10rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.address iframe {
+    width: 100%;
+    height: 50rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    margin-top: 10rem;
+    padding: 5rem;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap: 5rem;
+    justify-content: center;
+}
+
+.footer-item {
+    color: var(--white);
+}
+
+.footer-title {
+    border-bottom: .3rem solid green;
+    width: 20rem;
+    margin: 1rem 0;
+}
+
+.footer-text p {
+    margin: 1rem 0;
+}
+
+.footer-form form {
+    width: 30rem;
+}
+
+.footer-form form input {
+    padding: 1rem;
+}
 
 /* Register */
 .register {
@@ -258,4 +403,126 @@ input {
 form p {
     margin: 1rem 0;
     text-align: center;
+}
+
+
+/* Media */
+@media (max-width: 1024px) {
+    .advantages {
+        height: auto;
+    }
+
+    .advantages-inner {
+        padding-bottom: 10rem;
+    }
+
+    .intro-title h1 {
+        font-size: 10rem;
+    }
+
+    .footer-title {
+        width: 100%;
+    }
+
+    .footer-form form {
+        width: 35rem;
+    }
+
+    .footer-inner {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 4rem;
+    }
+
+    .navbar-wrap .menu {
+        display: none;
+    }
+
+    .hamb {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamb__field {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px auto;
+        background-color: #fff;
+        transition: .2s;
+    }
+
+    .popup {
+        position: fixed;
+        top: 10rem;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-color);
+        z-index: 100;
+        display: flex;
+        transition: .5s;
+    }
+
+    .popup.open {
+        left: 0;
+    }
+
+    .popup .menu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 50px 0;
+        overflow: auto;
+    }
+
+    .popup .menu > li {
+        width: 100%;
+    }
+
+    .popup .menu > li > a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--white);
+
+        transition: background-color .1s linear, color .1s linear;
+    }
+
+    .popup .menu > li > a:hover {
+        background-color: #E2D6D3;
+        color: var(--black);
+    }
+
+    .hamb-field.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamb-field.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamb-field.active .bar:nth-child(3) {
+        transform: translateY(-.8rem) rotate(-45deg);
+    }
+
+    body.noscroll {
+        overflow: hidden;
+    }
 }
